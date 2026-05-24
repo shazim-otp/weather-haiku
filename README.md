@@ -1,4 +1,4 @@
-#  Weather Haiku
+# Weather Haiku
 
 A weather-based poetry website that generates a unique haiku depending on the current weather in your location.
 
@@ -6,29 +6,33 @@ The website automatically detects the weather using a free weather API and displ
 
 ---
 
-##  Features
+## Features
 
--  Detects your current location
--  Fetches live weather data using an API
--  Generates weather-based haikus
--  Dynamic background themes
--  Responsive design for mobile and desktop
--  Lightweight and fast
--  Random haiku generation on each reload
--  Glassmorphism-style UI
-
----
-
-#  Built With
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Open-Meteo API**
+- Detects your current location
+- Fetches live weather data using an API
+- Generates weather-based haikus
+- Dynamic background themes
+- Responsive design for mobile and desktop
+- Lightweight and fast
+- Random haiku generation on each reload
+- Glassmorphism-style UI
+- Displays current temperature
+- Different moods for different weather conditions
+- No backend required
+- No API key required
 
 ---
 
-#  Project Structure
+# Built With
+
+- HTML5
+- CSS3
+- JavaScript
+- Open-Meteo API
+
+---
+
+# Project Structure
 
 ```bash
 weather-haiku/
@@ -41,7 +45,7 @@ weather-haiku/
 
 ---
 
-#  How It Works
+# How It Works
 
 ### 1. Location Access
 The browser asks permission to access the user's location.
@@ -64,7 +68,7 @@ The background color and overall mood of the page change based on the weather co
 
 ---
 
-#  Supported Weather Conditions
+# Supported Weather Conditions
 
 | Weather | Theme |
 |---|---|
@@ -75,7 +79,7 @@ The background color and overall mood of the page change based on the weather co
 
 ---
 
-#  API Used
+# API Used
 
 ## Open-Meteo API
 
@@ -92,9 +96,9 @@ The project uses:
 
 ---
 
-#  Getting Started
+# Getting Started
 
-## Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/weather-haiku.git
@@ -102,7 +106,7 @@ git clone https://github.com/yourusername/weather-haiku.git
 
 ---
 
-## Open the Project
+## 2. Open the Project Folder
 
 ```bash
 cd weather-haiku
@@ -110,34 +114,65 @@ cd weather-haiku
 
 ---
 
-## Run the Website
+## 3. Run the Website
 
-Simply open:
+You can run the project in different ways.
+
+### Method 1 — Open Directly
+Open the `index.html` file in your browser.
 
 ```bash
 index.html
 ```
 
-in your browser.
+---
 
-No installation or build tools are required.
+### Method 2 — Using VS Code Live Server
+
+Recommended for development.
+
+#### Steps:
+1. Open the project in VS Code
+2. Install the Live Server extension
+3. Right click `index.html`
+4. Click `Open with Live Server`
+
+The website will open automatically in your browser.
 
 ---
 
-#  UI Design
+### Method 3 — Using Python Local Server
 
-The interface uses:
-- Gradient backgrounds
-- Blur effects
-- Rounded cards
-- Minimal layout
-- Smooth transitions
+If Python is installed:
 
-The theme changes automatically based on weather conditions.
+```bash
+python -m http.server
+```
+
+Then open:
+
+```bash
+http://localhost:8000
+```
 
 ---
 
-#  Responsive Design
+# Requirements
+
+You only need:
+- A modern browser
+- Internet connection
+- Location permission enabled
+
+Works on:
+- Chrome
+- Edge
+- Firefox
+- Brave
+
+---
+
+# Responsive Design
 
 The website is optimized for:
 - Desktop
@@ -146,7 +181,21 @@ The website is optimized for:
 
 ---
 
-#  What You Can Learn From This Project
+# UI Design
+
+The interface uses:
+- Gradient backgrounds
+- Blur effects
+- Rounded cards
+- Minimal layout
+- Smooth transitions
+- Dynamic weather themes
+
+The mood of the UI changes depending on the weather condition.
+
+---
+
+# What You Can Learn From This Project
 
 This project is useful for learning:
 
@@ -157,10 +206,46 @@ This project is useful for learning:
 - DOM manipulation
 - Responsive web design
 - Dynamic styling
+- Weather condition handling
 
 ---
 
-#  Future Improvements
+# Screenshots
+
+You can add screenshots here later.
+
+Example:
+
+```bash
+screenshots/
+```
+
+---
+
+# Deployment
+
+You can deploy this project for free on:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Render
+
+---
+
+## Deploy on GitHub Pages
+
+1. Push the project to GitHub
+2. Go to repository settings
+3. Open `Pages`
+4. Select the main branch
+5. Save
+
+Your site will be live in a few seconds.
+
+---
+
+# Future Improvements
 
 Some ideas for future updates:
 
@@ -171,16 +256,38 @@ Some ideas for future updates:
 - Save favorite haikus
 - Multi-language support
 - Voice narration using text-to-speech
+- Animated transitions
+- Dark mode toggle
+- Weather icons
 
 ---
 
-#  Example Haiku
+# Example Haiku
 
 ```text
 Clouds drift through the sky
 Cold wind whispers through the trees
 Evening fades to blue
 ```
+
+---
+
+# Common Issues
+
+## Location Permission Denied
+
+If location access is denied:
+- The app may use default weather data
+- Enable location permission in browser settings
+
+---
+
+## Weather Not Loading
+
+Make sure:
+- Internet connection is active
+- Browser supports geolocation
+- API is reachable
 
 ---
 
@@ -192,8 +299,24 @@ If you want to improve the project:
 
 1. Fork the repository
 2. Create a new branch
-3. Make your changes
-4. Submit a pull request
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request
 
 ---
 
@@ -203,7 +326,7 @@ This project is licensed under the MIT License.
 
 ---
 
-#  Author
+# Author
 
 ### shazim
 
@@ -219,3 +342,7 @@ If you liked this project:
 - Try adding your own haikus
 
 ---
+
+# Final Note
+
+This project combines weather data with creative poetry to make a small interactive experience using only frontend technologies.
