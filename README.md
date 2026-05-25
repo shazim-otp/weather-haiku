@@ -6,7 +6,7 @@ I built this project to practice working with APIs and dynamic frontend developm
 I also wanted to experiment with combining real-world weather data with creative text generation to create
 a small interactive experience
 
-This project helped me better understand:
+
 This project helped me better understand
 - API requests
 - Async JavaScript
