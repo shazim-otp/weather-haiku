@@ -2,16 +2,27 @@
 
 # Why I Built This
 
-I built this project to practice working with APIs and dynamic frontend development using JavaScript.
-I also wanted to experiment with combining real-world weather data with creative text generation to create
-a small interactive experience
+I built Mallu AI because I wanted to create my own real-time AI voice assistant inspired by Jarvis.
+I was interested in combining speech recognition, AI APIs, and voice synthesis into a single assistant
+that could interact naturally through conversation.
 
-This project helped me better understand
-- API requests
-- Async JavaScript
-- Geolocation handling
-- Dynamic UI updates
-- Responsive frontend design
+I also wanted to challenge myself by building the project on a low-end laptop using lightweight tools
+and cloud-based AI inference for fast responses.
+
+Another goal was to make the assistant support:
+- English
+- Malayalam
+- Manglish
+
+since most voice assistants do not properly support regional language conversations.
+
+This project helped me better understand:
+- AI API integration
+- Speech recognition
+- Real-time audio processing
+- Voice synthesis
+- Multithreading in Python
+- Conversational AI systems
 
 ---
 
@@ -19,10 +30,13 @@ This project helped me better understand
 
 Some challenges while building this project included:
 
-- Handling browser location permissions
-- Mapping weather codes correctly
-- Creating different UI themes for different weather conditions
-- Making the design responsive on smaller screens
+- Reducing AI response delay
+- Handling microphone background noise
+- Preventing false speech detections
+- Supporting Malayalam and Manglish conversations
+- Managing real-time interruption while speaking
+- Creating smooth wake-word activation
+- Running AI efficiently on low-end hardware
 
 ---
 
@@ -30,22 +44,27 @@ Some challenges while building this project included:
 
 During this project I learned how to:
 
-- Fetch live weather data from an API
-- Use async/await properly
-- Dynamically update HTML elements with JavaScript
-- Create responsive layouts using CSS
-- Change styles dynamically based on data
+- Use Groq AI APIs for fast AI responses
+- Implement speech-to-text using Faster-Whisper
+- Generate realistic AI voice using Edge-TTS
+- Process microphone audio in real time
+- Build multilingual conversational systems
+- Use threading for interruption handling
+- Create idle-mode and wake-word systems
 
 ---
 
 # How to Customize
 
-You can customize the project easily by:
+You can customize the assistant easily by:
 
-- Adding your own haikus inside `script.js`
-- Changing background themes in `style.css`
-- Adding animations or sound effects
-- Replacing the weather API with another service
+- Changing the AI personality inside `meck.py`
+- Using different Edge-TTS voices
+- Modifying the wake word
+- Adding new automation features
+- Connecting ESP32 or IoT devices
+- Adding GUI animations and effects
+- Changing response styles and memory behavior
 
 ---
 
@@ -55,42 +74,53 @@ To edit the project locally:
 
 1. Clone the repository
 2. Open the folder in VS Code
-3. Edit the files:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-4. Run using Live Server
+3. Create a virtual environment
+4. Install dependencies
+5. Edit:
+   - `meck.py`
+6. Run using:
+
+```bash
+py -3.11 meck.py
+```
 
 ---
 
-# Browser Permissions
+# Hardware Requirements
 
-This project requires location access to detect weather in your area.
+This project was designed to run on low-end hardware and does not require:
+- Dedicated GPU
+- Expensive AI hardware
+- Local large language models
 
-If permission is denied:
-- Default weather data may be used
-- Some features may not work properly
+Minimum requirements:
+- Intel i3 processor
+- 4GB RAM
+- Integrated graphics
+- Internet connection
 
 ---
 
 # Performance
 
-This project is fully frontend-based and does not require:
-- A backend server
-- A database
-- Authentication
-- Paid APIs
+The project uses:
+- Cloud AI inference through Groq
+- Lightweight local speech recognition
+- Optimized audio processing
 
-This makes the website lightweight and fast to load.
+This allows the assistant to provide:
+- Low-latency responses
+- Fast startup
+- Smooth performance on low-end systems
 
 ---
 
 # Live Demo
 
 Project Link:
-https://shazim-otp.github.io/weather-haiku/
+https://shazim-otp.github.io/jarvis/
 
 GitHub Repository:
-https://github.com/shazim-otp/weather-haiku
+https://github.com/shazim-otp/jarvis
 
 ---
