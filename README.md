@@ -1,312 +1,193 @@
 ---
 
-# Why I Built This
+# Detailed Project Overview
 
-I built Mallu AI because I wanted to create my own real-time AI voice assistant inspired by Jarvis.
-I was interested in combining speech recognition, AI APIs, and voice synthesis into a single assistant
-that could interact naturally through conversation.
+Meck AI is a lightweight real-time conversational voice assistant designed to simulate a futuristic AI assistant experience similar to Jarvis.
 
-I also wanted to challenge myself by building the project on a low-end laptop using lightweight tools
-and cloud-based AI inference for fast responses.
+The assistant combines:
+- speech recognition
+- conversational AI
+- multilingual interaction
+- realistic text-to-speech
+- wake-word systems
+- idle listening behavior
 
-Another goal was to make the assistant support
-- English
-- Malayalam
-- Manglish
+into a single Python application.
 
-since most voice assistants do not properly support regional language conversations.
+Unlike many AI assistants that require powerful GPUs or expensive hardware, this project was specifically optimized to run on a low-end Intel i3 laptop with only 4GB RAM and integrated graphics.
 
-This project helped me better understand
-- AI API integration
-- Speech recognition
-- Real-time audio processing
-- Voice synthesis
-- Multithreading in Python
-- Conversational AI systems
+The project uses cloud AI inference through the Groq API to reduce local hardware requirements while still maintaining fast response times.
 
 ---
 
-# Challenges Faced
+# Real-Time Voice Pipeline
 
-Some challenges while building this project included
+The assistant processes conversations using the following workflow:
 
-- Reducing AI response delay
-- Handling microphone background noise
-- Preventing false speech detections
-- Supporting Malayalam and Manglish conversations
-- Managing real-time interruption while speaking
-- Creating smooth wake-word activation
-- Running AI efficiently on low-end hardware
+1. Record microphone audio
+2. Detect speech and filter silence
+3. Convert speech into text using Faster-Whisper
+4. Send conversation context to Groq AI
+5. Generate conversational responses
+6. Convert response into realistic speech
+7. Play audio output in real time
 
----
-
-# What I Learned
-
-During this project I learned how to
-
-- Use Groq AI APIs for fast AI responses
-- Implement speech-to-text using Faster-Whisper
-- Generate realistic AI voice using Edge-TTS
-- Process microphone audio in real time
-- Build multilingual conversational systems
-- Use threading for interruption handling
-- Create idle-mode and wake-word systems
+This creates a natural conversational experience.
 
 ---
 
-# How to Customize
+# Multilingual Support
 
-You can customize the assistant easily by
+One of the main goals of this project was supporting multilingual interaction.
 
-- Changing the AI personality inside `meck.py`
-- Using different Edge-TTS voices
-- Modifying the wake word
-- Adding new automation features
-- Connecting ESP32 or IoT devices
-- Adding GUI animations and effects
-- Changing response styles and memory behavior
+The assistant can:
+- Understand English
+- Understand Malayalam
+- Understand Manglish
+- Automatically switch voice output language
+
+This allows more natural conversations for bilingual users.
 
 ---
 
-# Local Development
+# Wake Word and Idle Mode
 
-To edit the project locally
+The assistant includes an idle mode system.
 
-1. Clone the repository
-2. Open the folder in VS Code
-3. Create a virtual environment
-4. Install dependencies
-5. Edit:
-   - `meck.py`
-6. Run using
+If no voice activity is detected for a period of time:
+- the assistant stops active listening
+- enters low-power idle mode
+- waits only for the wake word
 
-```bash
-py -3.11 meck.py
+The wake word:
+```text
+meck
 ```
 
----
+reactivates the assistant.
 
-# Hardware Requirements
-
-This project was designed to run on low-end hardware and does not require:
-- Dedicated GPU
-- Expensive AI hardware
-- Local large language models
-
-Minimum requirements
-- Intel i3 processor
-- 4GB RAM
-- Integrated graphics
-- Internet connection
+This behavior was inspired by commercial smart assistants.
 
 ---
 
-# Performance
+# Interrupt System
 
-The project uses
-- Cloud AI inference through Groq
-- Lightweight local speech recognition
-- Optimized audio processing
+The assistant supports interruption while speaking.
 
-This allows the assistant to provide
-- Low-latency responses
-- Fast startup
-- Smooth performance on low-end systems
+While Meck is generating voice output:
+- the microphone still listens in the background
+- if the wake word is detected
+- current speech playback immediately stops
+- the assistant returns to listening mode
 
----
+This creates a more realistic conversational flow.
 
 ---
 
-# System Architecture
+# Audio Processing
+
+The project includes:
+- voice activity detection
+- silence filtering
+- microphone volume thresholding
+- background noise filtering
+
+These systems help prevent:
+- false detections
+- accidental activations
+- random speech hallucinations
+
+---
+
+# AI Conversation Memory
+
+The assistant maintains conversation history during runtime.
+
+This allows:
+- contextual conversations
+- follow-up questions
+- remembering previous messages
+- more natural interactions
+
+Example:
 
 ```text
-User Voice
-    ↓
-Microphone Input
-    ↓
-Faster-Whisper Speech Recognition
-    ↓
-Groq AI Processing
-    ↓
-AI Response Generation
-    ↓
-Edge-TTS Voice Synthesis
-    ↓
-Speaker Output
+User: My name is Shazim
+User: What is my name?
+Assistant: Your name is Shazim.
 ```
 
 ---
 
-# Features
+# Why Cloud AI Was Used
 
-- Real-time voice interaction
-- AI-generated conversational responses
-- English, Malayalam, and Manglish support
-- Wake-word activation
-- Interrupt current response while speaking
-- Idle listening mode
-- Conversation memory
-- Realistic neural voice output
-- Smart silence detection
-- Low-latency cloud AI processing
+Running large language models locally was not practical on the available hardware.
 
----
+To solve this:
+- Groq API was used for cloud inference
+- local hardware handles only audio processing
+- AI reasoning happens remotely
 
-# Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| Python 3.11 | Main programming language |
-| Groq API | AI response generation |
-| Faster-Whisper | Speech-to-text |
-| Edge-TTS | Text-to-speech |
-| Pygame | Audio playback |
-| NumPy | Audio processing |
-| SoundDevice | Microphone recording |
-| SciPy | WAV audio handling |
+This approach allowed:
+- faster responses
+- lower RAM usage
+- smoother performance
+- compatibility with low-end laptops
 
 ---
 
-# Installation
+# Optimization Goals
 
-## Clone Repository
+The project was heavily optimized for:
+- low RAM usage
+- fast startup
+- minimal CPU load
+- low-latency responses
+- multilingual speech recognition
 
-```bash
-git clone https://github.com/shazim-otp/jarvis.git
-cd jarvis
-```
-
----
-
-## Create Virtual Environment
-
-### Windows
-
-```bash
-py -3.11 -m venv venv
-venv\Scripts\activate
-```
-
-### Linux
-
-```bash
-python3.11 -m venv venv
-source venv/bin/activate
-```
+Several iterations were tested to balance:
+- speech recognition accuracy
+- response speed
+- audio playback quality
+- CPU usage
 
 ---
 
-## Install Dependencies
+# Future Roadmap
 
-```bash
-pip install openai faster-whisper edge-tts pygame numpy sounddevice scipy
-```
-
-Optional:
-
-```bash
-pip uninstall pygame
-pip install pygame-ce
-```
-
----
-
-# Setup Groq API
-
-1. Visit:
-https://console.groq.com/keys
-
-2. Create a new API key
-
-3. Replace inside `meck.py`:
-
-```python
-api_key="YOUR_GROQ_API_KEY"
-```
-
-with your actual API key.
-
----
-
-# Running The Project
-
-```bash
-py -3.11 meck.py
-```
-
----
-
-# Example Commands
-
-## English
-
-```text
-What is artificial intelligence?
-```
-
-## Malayalam
-
-```text
-ഇന്നത്തെ കാലാവസ്ഥ എന്താ?
-```
-
-## Manglish
-
-```text
-entha cheyyunne bro
-```
-
----
-
-# Project Structure
-
-```text
-jarvis/
-│
-├── meck.py
-├── click.mp3
-├── input.wav
-├── interrupt.wav
-├── wake.wav
-├── README.md
-└── venv/
-```
-
----
-
-# Future Improvements
-
-Planned future upgrades include:
+Future versions of Meck AI may include:
 
 - Desktop GUI
 - ESP32 smart-home integration
+- Vision system using OpenCV
 - Face recognition
-- Camera vision support
-- Emotion-aware responses
-- Mobile companion app
+- Emotion-aware conversations
+- Home automation controls
 - Offline AI mode
-- Smart automation controls
+- Mobile companion app
+- Custom personalities
+- Plugin/skill system
 
 ---
 
-# Hardware Used
+# Educational Value
 
-This project was developed on:
+This project helped explore several advanced concepts including:
 
-- Intel i3 processor
-- 4GB RAM
-- Integrated Intel HD Graphics
-
-The assistant was optimized specifically for low-end hardware.
+- Speech-to-text systems
+- Text-to-speech synthesis
+- Real-time audio processing
+- AI API integration
+- Python multithreading
+- Wake-word systems
+- Conversational memory
+- Multilingual NLP workflows
 
 ---
 
-# Demo
+# Repository
 
-Demo URL:
-[(Add your demo link here)](https://shazim-otp.github.io/jarvis/)
-
-GitHub Repository:
+GitHub:
 https://github.com/shazim-otp/jarvis
 
 ---
