@@ -115,12 +115,198 @@ This allows the assistant to provide
 
 ---
 
-# Live Demo
+---
 
-Project Link
-https://shazim-otp.github.io/jarvis/
+# System Architecture
 
-GitHub Repository
+```text
+User Voice
+    ↓
+Microphone Input
+    ↓
+Faster-Whisper Speech Recognition
+    ↓
+Groq AI Processing
+    ↓
+AI Response Generation
+    ↓
+Edge-TTS Voice Synthesis
+    ↓
+Speaker Output
+```
+
+---
+
+# Features
+
+- Real-time voice interaction
+- AI-generated conversational responses
+- English, Malayalam, and Manglish support
+- Wake-word activation
+- Interrupt current response while speaking
+- Idle listening mode
+- Conversation memory
+- Realistic neural voice output
+- Smart silence detection
+- Low-latency cloud AI processing
+
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python 3.11 | Main programming language |
+| Groq API | AI response generation |
+| Faster-Whisper | Speech-to-text |
+| Edge-TTS | Text-to-speech |
+| Pygame | Audio playback |
+| NumPy | Audio processing |
+| SoundDevice | Microphone recording |
+| SciPy | WAV audio handling |
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/shazim-otp/jarvis.git
+cd jarvis
+```
+
+---
+
+## Create Virtual Environment
+
+### Windows
+
+```bash
+py -3.11 -m venv venv
+venv\Scripts\activate
+```
+
+### Linux
+
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install openai faster-whisper edge-tts pygame numpy sounddevice scipy
+```
+
+Optional:
+
+```bash
+pip uninstall pygame
+pip install pygame-ce
+```
+
+---
+
+# Setup Groq API
+
+1. Visit:
+https://console.groq.com/keys
+
+2. Create a new API key
+
+3. Replace inside `meck.py`:
+
+```python
+api_key="YOUR_GROQ_API_KEY"
+```
+
+with your actual API key.
+
+---
+
+# Running The Project
+
+```bash
+py -3.11 meck.py
+```
+
+---
+
+# Example Commands
+
+## English
+
+```text
+What is artificial intelligence?
+```
+
+## Malayalam
+
+```text
+ഇന്നത്തെ കാലാവസ്ഥ എന്താ?
+```
+
+## Manglish
+
+```text
+entha cheyyunne bro
+```
+
+---
+
+# Project Structure
+
+```text
+jarvis/
+│
+├── meck.py
+├── click.mp3
+├── input.wav
+├── interrupt.wav
+├── wake.wav
+├── README.md
+└── venv/
+```
+
+---
+
+# Future Improvements
+
+Planned future upgrades include:
+
+- Desktop GUI
+- ESP32 smart-home integration
+- Face recognition
+- Camera vision support
+- Emotion-aware responses
+- Mobile companion app
+- Offline AI mode
+- Smart automation controls
+
+---
+
+# Hardware Used
+
+This project was developed on:
+
+- Intel i3 processor
+- 4GB RAM
+- Integrated Intel HD Graphics
+
+The assistant was optimized specifically for low-end hardware.
+
+---
+
+# Demo
+
+Demo URL:
+[(Add your demo link here)](https://shazim-otp.github.io/jarvis/)
+
+GitHub Repository:
 https://github.com/shazim-otp/jarvis
 
 ---
