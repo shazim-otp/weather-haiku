@@ -4,7 +4,7 @@
 
 Meck AI is a lightweight real-time conversational voice assistant designed to simulate a futuristic AI assistant experience similar to Jarvis.
 
-The assistant combines:
+The assistant combines
 - speech recognition
 - conversational AI
 - multilingual interaction
