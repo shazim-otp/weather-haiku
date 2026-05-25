@@ -9,14 +9,14 @@ that could interact naturally through conversation.
 I also wanted to challenge myself by building the project on a low-end laptop using lightweight tools
 and cloud-based AI inference for fast responses.
 
-Another goal was to make the assistant support:
+Another goal was to make the assistant support
 - English
 - Malayalam
 - Manglish
 
 since most voice assistants do not properly support regional language conversations.
 
-This project helped me better understand:
+This project helped me better understand
 - AI API integration
 - Speech recognition
 - Real-time audio processing
@@ -28,7 +28,7 @@ This project helped me better understand:
 
 # Challenges Faced
 
-Some challenges while building this project included:
+Some challenges while building this project included
 
 - Reducing AI response delay
 - Handling microphone background noise
@@ -42,7 +42,7 @@ Some challenges while building this project included:
 
 # What I Learned
 
-During this project I learned how to:
+During this project I learned how to
 
 - Use Groq AI APIs for fast AI responses
 - Implement speech-to-text using Faster-Whisper
@@ -56,7 +56,7 @@ During this project I learned how to:
 
 # How to Customize
 
-You can customize the assistant easily by:
+You can customize the assistant easily by
 
 - Changing the AI personality inside `meck.py`
 - Using different Edge-TTS voices
@@ -70,7 +70,7 @@ You can customize the assistant easily by:
 
 # Local Development
 
-To edit the project locally:
+To edit the project locally
 
 1. Clone the repository
 2. Open the folder in VS Code
@@ -78,7 +78,7 @@ To edit the project locally:
 4. Install dependencies
 5. Edit:
    - `meck.py`
-6. Run using:
+6. Run using
 
 ```bash
 py -3.11 meck.py
@@ -93,7 +93,7 @@ This project was designed to run on low-end hardware and does not require:
 - Expensive AI hardware
 - Local large language models
 
-Minimum requirements:
+Minimum requirements
 - Intel i3 processor
 - 4GB RAM
 - Integrated graphics
@@ -103,12 +103,12 @@ Minimum requirements:
 
 # Performance
 
-The project uses:
+The project uses
 - Cloud AI inference through Groq
 - Lightweight local speech recognition
 - Optimized audio processing
 
-This allows the assistant to provide:
+This allows the assistant to provide
 - Low-latency responses
 - Fast startup
 - Smooth performance on low-end systems
@@ -117,10 +117,10 @@ This allows the assistant to provide:
 
 # Live Demo
 
-Project Link:
+Project Link
 https://shazim-otp.github.io/jarvis/
 
-GitHub Repository:
+GitHub Repository
 https://github.com/shazim-otp/jarvis
 
 ---
